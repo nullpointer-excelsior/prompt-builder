@@ -31,7 +31,6 @@ export default function PromptTable(props: Props) {
     }
 
     const onAcceptDeletePrompt = () => {
-        console.log('Delete', modal.promptToDelete)
         setModal({ show: false, promptToDelete: ''})
     }
 
