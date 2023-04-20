@@ -25,12 +25,11 @@ export default function PromptTable(props: Props) {
     }
 
     const onDeletePrompt = (id: string) => {
-        console.log(id)
         setModal({ show: true, promptToDelete: id })
-        deletePrompt(id)
     }
-
+    
     const onAcceptDeletePrompt = () => {
+        deletePrompt(modal.promptToDelete)
         setModal({ show: false, promptToDelete: ''})
     }
 
