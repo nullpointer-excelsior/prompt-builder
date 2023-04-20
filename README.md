@@ -4,6 +4,7 @@
 * react
 * nodejs 18
 * tailwindcss 
+* tailwndui
 
 ## TODO:
 
