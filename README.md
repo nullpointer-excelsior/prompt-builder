@@ -10,7 +10,7 @@
 - [x] search on PromptList
 - [ ] validate empty values when prompt is saved on store
 - [ ] button edit prompt on prompt/view
-- [ ] delete botton must trhow a confirmation popup
+- [x] delete botton must throw a confirmation popup
 - [ ] dark theme and palette color
 - [x] sync state with backend API
 - [ ] Not found component

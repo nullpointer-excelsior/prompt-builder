@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import usePromptsActions from "../../../../store/actions/usePromptsActions";
 import { Prompt } from "../../../../core/model/Prompt";
 import { useEffect, useState } from "react";
+import WarningModal from "../../../shared/components/WarningModal";
 
 interface Props {
     prompts: Prompt[];
@@ -13,6 +14,7 @@ export default function PromptTable(props: Props) {
     const [tableData, setPrompts] = useState<Prompt[]>([])
     const navigate = useNavigate();
     const { deletePrompt } = usePromptsActions()
+    const [modal, setModal] = useState({ show: false, promptToDelete: ''})
     
     useEffect(() =>{
         setPrompts([...prompts])
@@ -23,7 +25,18 @@ export default function PromptTable(props: Props) {
     }
 
     const onDeletePrompt = (id: string) => {
+        console.log(id)
+        setModal({ show: true, promptToDelete: id })
         deletePrompt(id)
+    }
+
+    const onAcceptDeletePrompt = () => {
+        console.log('Delete', modal.promptToDelete)
+        setModal({ show: false, promptToDelete: ''})
+    }
+
+    const onCancelDeletePrompt = () => {
+        setModal({ show: false, promptToDelete: ''})
     }
 
     const onViewPrompt = (id: string) => {
@@ -93,6 +106,14 @@ export default function PromptTable(props: Props) {
                     </tbody>
                 </table>
             </div>
+            <WarningModal 
+                title="Eliminar Prompt" 
+                message="¿Deseas eliminar el prompt seleccionado?" 
+                buttonMessage="Eliminar" 
+                show={modal.show}
+                onAccept={onAcceptDeletePrompt}
+                onCancel={onCancelDeletePrompt}
+                onClose={() => setModal({ show: false, promptToDelete: '' })} />
         </div>
     )
 }
