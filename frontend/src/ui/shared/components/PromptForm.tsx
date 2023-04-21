@@ -45,8 +45,8 @@ export default function PromptForm(props: Props) {
   };
 
   return (
-    <form className="w-full max-w-lg mx-auto">
-      <div className="flex flex-wrap -mx-3 mb-6">
+    <form className="w-full px-20 mx-auto">
+      <div className="flex flex-wrap -mx-3">
         <div className="w-full px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
             Nombre
@@ -54,7 +54,7 @@ export default function PromptForm(props: Props) {
           <input onChange={onNameChange} value={formValues.name} type="text" placeholder="Nombre" id="name"  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
         </div>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
+      <div className="flex flex-wrap -mx-3">
         <div className="w-full px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
             Descripción
@@ -62,12 +62,12 @@ export default function PromptForm(props: Props) {
           <textarea onChange={onDescriptionChange} value={formValues.description} placeholder="Descripción" id="description" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
         </div>
       </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full px-3 mb-6 md:mb-0">
+      <div className="flex flex-wrap -mx-3 h-96">
+        <div className="w-full h-full px-3 mb-6 md:mb-0 ">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
             Prompt Template
           </label>
-          <textarea onChange={onTemplateChange} value={formValues.template} placeholder="Prompt template" id="prompt-template" className="appearance-none block w-full h-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
+          <textarea onChange={onTemplateChange} value={formValues.template} placeholder="Prompt template" id="prompt-template" className="appearance-none w-full h-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" />
         </div>
       </div>
 
