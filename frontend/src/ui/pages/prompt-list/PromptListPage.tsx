@@ -4,10 +4,11 @@ import PageContainer from "../../shared/components/PageContainer";
 import { RootState } from "../../../store/store";
 import { useSelector } from "react-redux";
 
-export default function w2PromptListPage() {
-    
+export default function PromptListPage() {
+
     const state = useSelector((state: RootState) => state.prompt)
     const { prompts, loading } = state
+    
     return (
         <PageContainer>
             <Title title="Prompt list" subtitle="Lista de prompts"/>
